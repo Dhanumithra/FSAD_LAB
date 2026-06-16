@@ -1,0 +1,10 @@
+let a1:number = 8;
+let a2:number = 2;
+let sum=(n1:number, n2:number):number =>{return n1+n2};
+let sub=(n1:number, n2:number):number =>{return n1-n2};
+let prod=(n1:number, n2:number):number =>{return n1*n2};
+let div=(n1:number, n2:number):number =>{return n1/n2};
+console.log("Sum :" , sum(a1, a2));
+console.log("Difference :" , sub(a1, a2));
+console.log("Product :" , prod(a1, a2));
+console.log("Quotient :" , div(a1, a2));

@@ -1,0 +1,11 @@
+"use strict";
+let a1 = 8;
+let a2 = 2;
+let sum = (n1, n2) => { return n1 + n2; };
+let sub = (n1, n2) => { return n1 - n2; };
+let prod = (n1, n2) => { return n1 * n2; };
+let div = (n1, n2) => { return n1 / n2; };
+console.log("Sum :", sum(a1, a2));
+console.log("Difference :", sub(a1, a2));
+console.log("Product :", prod(a1, a2));
+console.log("Quotient :", div(a1, a2));
