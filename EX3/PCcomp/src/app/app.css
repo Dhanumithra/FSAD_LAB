@@ -1,0 +1,41 @@
+.container{
+    width:800px;
+    margin:auto;
+    border:3px solid orange;
+    padding:15px;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.header{
+    width:75%;
+    border:2px solid blue;
+    padding:10px;
+}
+
+.account{
+    width:20%;
+    border:2px solid green;
+    padding:10px;
+}
+
+.content{
+    display:flex;
+}
+
+.menu{
+    width:25%;
+    border:2px solid red;
+    padding:10px;
+    margin-right:10px;
+}
+
+.body{
+    width:75%;
+    border:2px solid violet;
+    padding:10px;
+}

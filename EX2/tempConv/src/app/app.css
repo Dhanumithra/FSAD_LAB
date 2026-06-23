@@ -1,0 +1,30 @@
+.container {
+  width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 220px;
+  padding: 8px;
+  margin: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+h1 {
+  color: darkblue;
+}
+
+p {
+  font-weight: bold;
+  color: green;
+}
+
+hr {
+  margin: 20px 0;
+}
