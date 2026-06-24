@@ -1,0 +1,49 @@
+<h2>Student Dashboard</h2>
+
+<button (click)="toggleDetails()">
+  {{showDetails ? 'Hide Details' : 'Show Details'}}
+</button>
+
+<div class="cards">
+
+@for(student of students; track student.id){
+
+  <div class="card"
+
+       [style.border-left]="student.mark >= 90
+       ? '8px solid gold'
+       : '8px solid #2563eb'"
+
+       [class.pass]="student.mark >= 50"
+       [class.fail]="student.mark < 50">
+
+    <h3>{{student.name}}</h3>
+
+    <p>Mark : {{student.mark}}</p>
+
+    @if(showDetails){
+
+      <div>
+
+        <p>
+          Attendance :
+          {{student.attendance}}%
+        </p>
+
+        @if(student.mark >= 90){
+
+          <p class="topper">
+            ⭐ Top Performer
+          </p>
+
+        }
+
+      </div>
+
+    }
+
+  </div>
+
+}
+
+</div>
