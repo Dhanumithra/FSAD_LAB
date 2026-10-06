@@ -16,5 +16,3 @@ Here is a summary of all the lab exercises, the applications built, the core web
 | **EX 11** | Student System (Django) | Django Models, Admin | ✅ Done |
 | **EX 12** | Student System (Django) | Django Views, Forms | ✅ Done |
 | **EX 13** | Student System (Django) | Django Templates, MTV Architecture | ✅ Done |
-| **EX 14** | *TBD* | *TBD* | ❌ Not Yet |
-| **EX 15** | *TBD* | *TBD* | ❌ Not Yet |
