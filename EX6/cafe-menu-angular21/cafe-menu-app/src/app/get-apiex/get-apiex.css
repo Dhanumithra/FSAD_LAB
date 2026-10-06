@@ -1,0 +1,143 @@
+* { box-sizing: border-box; }
+
+.container {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #3b1f0a;
+  margin: 0 0 6px;
+}
+
+.tagline {
+  color: #7a5c3e;
+  font-size: 0.95rem;
+  margin: 0 0 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  padding: 7px 18px;
+  border: 2px solid #8b5e3c;
+  background: white;
+  color: #8b5e3c;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: #8b5e3c;
+  color: white;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fdf6ee;
+  border: 1px solid #e8d5bb;
+  border-radius: 12px;
+  padding: 14px 18px;
+  border-left: 5px solid #c07d3a;
+}
+
+.item-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.item-body {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 700;
+  color: #3b1f0a;
+  font-size: 1rem;
+}
+
+.item-category {
+  font-size: 0.78rem;
+  color: #9c6b40;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.item-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #c07d3a;
+  flex-shrink: 0;
+}
+
+/* States */
+.loading {
+  text-align: center;
+  color: #7a5c3e;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 40px 0;
+}
+
+.error {
+  color: #c0392b;
+  background: #fdecea;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+}
+
+.empty {
+  color: #999;
+  text-align: center;
+  padding: 30px 0;
+}
+
+footer {
+  color: #999;
+  font-size: 0.8rem;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+  text-align: center;
+}
+
+footer a {
+  color: #8b5e3c;
+  text-decoration: none;
+}

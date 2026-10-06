@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            min-height: 100vh;
+        }
+
+        /* ── Navbar ── */
+        nav.top-nav {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav.top-nav .brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            letter-spacing: 0.4px;
+            text-decoration: none;
+        }
+
+        nav.top-nav .nav-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        nav.top-nav .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav.top-nav .nav-links a:hover {
+            background: rgba(255,255,255,0.08);
+            color: #f1f5f9;
+        }
+
+        /* ── Page wrapper ── */
+        .page-wrapper {
+            max-width: 960px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── Card ── */
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        /* ── Page heading ── */
+        .page-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* ── Table ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead th {
+            background: #1a1a2e;
+            color: #e2e8f0;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f2f5;
+            transition: background 0.15s;
+        }
+
+        tbody tr:last-child { border-bottom: none; }
+        tbody tr:hover { background: #f8fafc; }
+
+        tbody td {
+            padding: 0.75rem 1rem;
+            color: #334155;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 7px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+
+        .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        .btn-primary   { background: #4f46e5; color: #fff; }
+        .btn-secondary { background: #64748b; color: #fff; }
+        .btn-danger    { background: #ef4444; color: #fff; }
+        .btn-warning   { background: #f59e0b; color: #fff; }
+
+        /* ── Action links in table ── */
+        .action-link {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+        }
+
+        .action-link.edit   { background: #eff6ff; color: #2563eb; }
+        .action-link.delete { background: #fef2f2; color: #dc2626; }
+        .action-link:hover  { opacity: 0.8; }
+
+        /* ── Forms ── */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            padding: 0.6rem 0.9rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+        }
+
+        /* ── Error / alert ── */
+        .alert-error {
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            color: #b91c1c;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Info rows (student detail) ── */
+        .info-row {
+            display: flex;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f2f5;
+            font-size: 0.9rem;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            width: 160px;
+            flex-shrink: 0;
+            font-weight: 600;
+            color: #64748b;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .info-value { color: #1e293b; font-weight: 500; }
+
+        /* ── Welcome banner ── */
+        .welcome-banner {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── Nav links below content ── */
+        .content-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.75rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+    <a class="brand" href="{% url 'student_list' %}">🎓 Student Management System</a>
+    <div class="nav-links">
+        <a href="{% url 'student_list' %}">Home</a>
+        <a href="{% url 'add_student' %}">Add Student</a>
+    </div>
+</nav>
+
+<div class="page-wrapper">
+    <div class="card">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

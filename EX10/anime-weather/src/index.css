@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+  --primary-pink: #FDA4AF;
+  --soft-pink: #FFE4E6;
+  --dark-pink: #F43F5E;
+  --text-main: #4C1D95;
+  --text-light: #7C3AED;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--primary-pink);
+  background: #ffffff;
+  transform: scale(1.02);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-main);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #A78BFA;
+}
+
+.search-btn {
+  background: var(--primary-pink);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: var(--dark-pink);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.search-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.loading {
+  margin-top: 30px;
+  font-weight: 800;
+  color: var(--primary-pink);
+  font-size: 1.2rem;
+  animation: pulse 1.5s infinite;
+}
+
+.error {
+  margin-top: 20px;
+  background: #FEE2E2;
+  color: #EF4444;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: 1px solid #FCA5A5;
+}
+
+.weather-card {
+  margin-top: 30px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.animate-pop-in {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.city-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.weather-icon-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.15));
+}
+
+.temp-display {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+.weather-desc {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255,255,255,0.6);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.detail-item span {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.detail-item small {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

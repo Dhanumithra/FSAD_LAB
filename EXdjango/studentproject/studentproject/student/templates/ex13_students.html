@@ -1,0 +1,38 @@
+{% extends 'ex13_base.html' %}
+
+{% block content %}
+
+<h2 class="fw-bold mb-4" style="color:#1a1a2e; font-size:1.35rem;
+    padding-bottom:0.75rem; border-bottom:2px solid #e2e8f0;">
+    Students
+</h2>
+
+<table class="table table-hover mb-0" style="font-size:0.9rem;">
+    <thead style="background:#1a1a2e;">
+        <tr>
+            <th style="color:#e2e8f0; font-weight:600; padding:0.8rem 1rem; border:none;">Roll No</th>
+            <th style="color:#e2e8f0; font-weight:600; padding:0.8rem 1rem; border:none;">Name</th>
+            <th style="color:#e2e8f0; font-weight:600; padding:0.8rem 1rem; border:none;">Department</th>
+            <th style="color:#e2e8f0; font-weight:600; padding:0.8rem 1rem; border:none;">Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td style="color:#334155; padding:0.75rem 1rem; border-color:#f0f2f5;">{{ student.rollno }}</td>
+            <td style="color:#334155; padding:0.75rem 1rem; border-color:#f0f2f5; font-weight:500;">{{ student.name }}</td>
+            <td style="color:#334155; padding:0.75rem 1rem; border-color:#f0f2f5;">{{ student.department }}</td>
+            <td style="color:#334155; padding:0.75rem 1rem; border-color:#f0f2f5;">{{ student.year }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center py-4"
+                style="color:#94a3b8; font-size:0.9rem; border-color:#f0f2f5;">
+                No students found in the database.
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

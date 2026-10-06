@@ -1,0 +1,111 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', 'Space Grotesk', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #050510; /* Fallback */
+}
+
+.app-background {
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(33, 11, 84, 0.5), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(13, 82, 119, 0.5), transparent 25%),
+    url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding-top: 80px; /* Offset for navbar */
+}
+
+.page-section {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #6366f1 !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6366f1;
+  box-shadow: 0 0 10px #6366f1;
+}
+
+.text-primary {
+  color: #6366f1 !important;
+}
+
+.btn-primary {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.glass-card {
+  background: rgba(20, 20, 30, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.glow-card {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  transform: scale(1.05);
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}

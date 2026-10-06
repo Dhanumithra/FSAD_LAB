@@ -1,0 +1,53 @@
+<div class="container">
+  <header>
+    <div class="logo">☕</div>
+    <h1>The Angular Café</h1>
+    <p class="tagline">Fresh food, great coffee — fetched live via API</p>
+  </header>
+
+  <!-- Category Tabs -->
+  @if (!loading() && !error()) {
+    <div class="tabs">
+      @for (tab of tabs(); track tab) {
+        <button
+          class="tab-btn"
+          [class.active]="activeTab() === tab"
+          (click)="setTab(tab)">
+          {{ tab }}
+        </button>
+      }
+    </div>
+  }
+
+  <!-- Loading -->
+  @if (loading()) {
+    <p class="loading">☕ Preparing your menu...</p>
+  }
+
+  <!-- Error -->
+  @if (error()) {
+    <p class="error">❌ {{ error() }}</p>
+  }
+
+  <!-- Menu Grid -->
+  @if (!loading() && !error()) {
+    <div class="menu-grid">
+      @for (item of filtered(); track item.id) {
+        <div class="menu-card">
+          <div class="item-emoji">{{ item.emoji }}</div>
+          <div class="item-body">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-category">{{ item.category }}</div>
+          </div>
+          <div class="item-price">₹{{ item.price }}</div>
+        </div>
+      } @empty {
+        <p class="empty">No items in this category.</p>
+      }
+    </div>
+  }
+
+  <footer>
+    Menu data from <a href="https://www.themealdb.com" target="_blank">TheMealDB</a> (free, no API key required)
+  </footer>
+</div>

@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+  background-color: #fff0f5;
+  color: #6b3a4b;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffc0cb;
+  padding: 16px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #a5385d;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 18px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #a5385d;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #ffe0eb;
+}
+
+.navbar-links a.active {
+  background-color: #ff8fab;
+  color: white;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  min-height: 70vh;
+}
+
+h1 {
+  color: #d6336c;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #ffe4ec;
+  border: 2px solid #ffb6c1;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-emoji {
+  font-size: 40px;
+}
+
+.card-name {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #a5385d;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 20px;
+  background-color: #ffe4ec;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid #ffb6c1;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: #a5385d;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ffb6c1;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form button {
+  margin-top: 16px;
+  background-color: #ff8fab;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.contact-form button:hover {
+  background-color: #ff6f91;
+}
+
+.success-msg {
+  font-weight: bold;
+  color: #d6336c;
+}
+
+.footer {
+  text-align: center;
+  padding: 14px;
+  color: #a5385d;
+  font-size: 13px;
+  background-color: #ffe4ec;
+}

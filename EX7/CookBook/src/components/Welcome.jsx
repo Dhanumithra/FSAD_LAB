@@ -1,8 +1,8 @@
-function welcome(){
-    return (
-        <>
-        <h1>Welcome everyone</h1>
-        </>
-    )
+import React from 'react';
+
+// Receives props from Home
+function Welcome({ text }) {
+  return <p><strong>{text}</strong></p>;
 }
-export default welcome;
+
+export default Welcome;
